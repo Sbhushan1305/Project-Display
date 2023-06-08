@@ -1,0 +1,13 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.background{
+height: 100vh;
+width: 100%;
+/* background-image: url('../../../assets/homeImage.jpg'); */
+background-image: url('https://images.freeimages.com/images/previews/ac9/railway-hdr-1361893.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+
+}

@@ -1,0 +1,35 @@
+<div class="container-fluid col-20 md" style="align-items: center; text-align: center;">
+    <ul>
+        <table style="text-align: center; border-style: solid; margin: 5mm;border-spacing: 2mm;border-inline-style: unset;">
+            <thead >
+                <tr style="color: darkblue;font-size: 10mm;">
+                    <th colspan="7">Product List</th>
+                </tr>
+                <tr style="color: darkgreen;font-size: 5mm;">
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Product Brand</th>
+                    <th>Product Description</th>
+                    <th>Product Price</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let prod of productList" style="color: midnightblue;font-size: 5mm;">
+                <tr>
+                    <td>{{prod.productId}}</td>
+                    <td>{{prod.productName}}</td>
+                    <td>{{prod.productBrand}}</td>
+                    <td>{{prod.productDescription}}</td>
+                    <td>{{prod.productPrice}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" (click)="updateProduct(prod.productId)">Update</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger" (click)="delteProduct(prod.productId)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </ul>
+</div>

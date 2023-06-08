@@ -1,0 +1,87 @@
+<div class="container-fluid md col-5">
+  <h1>Add Data</h1>
+  <form #myForm="ngForm" (submit)="saveProduct(myForm.value)">
+
+    <!-- <div style="color: blue;">
+      <label for="productName"><b>Product Name</b></label>
+      <br>
+      <input type="text" name="productName" id="productName" placeholder="Enter Product Name Here" ngModel>
+    </div>
+    <div style="color: blue;">
+      <label for="productBrand"><b>Product Brand</b></label>
+      <br>
+      <input type="text" name="productBrand" id="productBrand" placeholder="Enter Product Brand Here" ngModel>
+    </div>
+    <div style="color: blue;">
+      <label for="productDescription"><b>Product Description</b></label>
+      <br>
+      <input type="text" name="productDescription" id="productDescription" placeholder="Enter Product Description Here"  ngModel>
+    </div>
+    <div style="color: blue;">
+      <label for="productPrice"><b>Product Price</b></label>
+      <br>
+      <input type="text" name="productPrice" id="productPrice" placeholder="Enter Product Price Here" ngModel>
+    </div> -->
+
+    <div class="input-group mb-3">
+      <span class="input-group-text border-0" id="productName">Product Name</span>
+      <input
+        type="text"
+        class="form-control rounded"
+        placeholder="Enter Here Product Name"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+        name="productName"
+        id="productName"
+        ngModel
+      />
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text border-0" id="productBrand">Product Brand</span>
+      <input
+        type="text"
+        class="form-control rounded"
+        placeholder="Enter Here Product Brand"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+        name="productBrand"
+        id="productBrand"
+        ngModel
+      />
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text border-0" id="productDescription">Product Description</span>
+      <input
+        type="text"
+        class="form-control rounded"
+        placeholder="Enter Here Product Description"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+        name="productDescription"
+        id="productDescription"
+        ngModel
+      />
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text border-0" id="productBrand">Product Price</span>
+      <input
+        type="text"
+        class="form-control rounded"
+        placeholder="Enter Here Product Price"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+        name="productPrice"
+        id="productPrice"
+        ngModel
+      />
+    </div>
+
+  <br><br>
+    <div>
+      <input type="submit" value="Add Data" class="btn btn-primary">
+    </div>
+  </form>
+</div>
