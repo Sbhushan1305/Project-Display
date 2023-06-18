@@ -14,6 +14,11 @@ import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
+import { AddproductComponent } from './pages/addproduct/addproduct.component';
+import { PaymentComponent } from './pages/payment/payment.component';
+import { CustomerlistComponent } from './pages/customerlist/customerlist.component';
+import { UserlistComponent } from './pages/userlist/userlist.component';
+import { ReceiptComponent } from './pages/receipt/receipt.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +28,12 @@ import { HttpClientModule} from '@angular/common/http';
     SignupComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AddproductComponent,
+    PaymentComponent,
+    CustomerlistComponent,
+    UserlistComponent,
+    ReceiptComponent,
   ],
   imports: [
     BrowserModule,
