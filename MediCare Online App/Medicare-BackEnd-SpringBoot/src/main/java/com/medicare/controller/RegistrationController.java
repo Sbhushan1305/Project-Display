@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -37,10 +38,31 @@ public class RegistrationController {
 		return new ResponseEntity<RegistrationEntity>(registrationService.findUserByName(username), HttpStatus.OK);
 	}
 
+	@GetMapping(path = "/findUserByName/{useremail}")
+	public ResponseEntity<RegistrationEntity> findByUserEmail(@PathVariable String useremail) {
+		return new ResponseEntity<RegistrationEntity>(registrationService.findUserByEmail(useremail), HttpStatus.OK);
+	}
+
 	@PostMapping(path = "/saveUser")
 	public ResponseEntity<RegistrationEntity> saveUser(@RequestBody RegistrationEntity userEntity) {
 		return new ResponseEntity<RegistrationEntity>(registrationService.saveUser(userEntity), HttpStatus.CREATED);
 	}
+
+	/* <----------------save with Validation method----------------> */
+	@PostMapping(path = "/usersave")
+	public RegistrationEntity userSave(@RequestBody RegistrationEntity userEntity) throws Exception {
+		String tempEmail = userEntity.getUseremail();
+		if (tempEmail != null && !"".equals(tempEmail)) {
+			RegistrationEntity entityobj = registrationService.findUserByEmail(tempEmail);
+			if (entityobj != null) {
+				throw new Exception("User With " + tempEmail + " is already Available");
+			}
+		}
+		RegistrationEntity entity = null;
+		entity = registrationService.saveUser(userEntity);
+		return entity;
+	}
+	/* <----------------save with Validation method----------------> */
 
 	@PutMapping(path = "/updateUserById/{uid}")
 	public ResponseEntity<RegistrationEntity> updateProductById(@PathVariable int uid,
@@ -52,5 +74,20 @@ public class RegistrationController {
 	@DeleteMapping(path = "/deleteUserById/{pid}")
 	public ResponseEntity<String> deleteProductById(@PathVariable int uid) {
 		return new ResponseEntity<String>(registrationService.deleteUser(uid), HttpStatus.OK);
+	}
+
+	/*------------------> login Method <------------------*/
+	@PostMapping(path = "/login")
+	public RegistrationEntity loginUser(@RequestBody RegistrationEntity registrationEntity) throws Exception {
+		String tempEmail = registrationEntity.getUseremail();
+		String tempPassword = registrationEntity.getUserpassword();
+		RegistrationEntity entityObj = null;
+		if (tempEmail != null && tempPassword != null) {
+			entityObj = registrationService.fetchByUsernameAndUserpassword(tempEmail, tempPassword);
+		}
+		if (entityObj == null) {
+			throw new Exception("Bad Credentials...!");
+		}
+		return entityObj;
 	}
 }

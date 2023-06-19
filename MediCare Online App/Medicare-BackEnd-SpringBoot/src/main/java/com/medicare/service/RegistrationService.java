@@ -1,13 +1,14 @@
 package com.medicare.service;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import com.medicare.model.RegistrationEntity;
-import com.medicare.repo.LoginRepository;
 import com.medicare.repo.RegistrationRepository;
 
 @Service
@@ -25,6 +26,10 @@ public class RegistrationService {
 
 	public RegistrationEntity findUserByName(String username) {
 		return registrationRepository.findByusername(username).orElseThrow(() -> new RuntimeException("No data Found"));
+	}
+	
+	public RegistrationEntity findUserByEmail(String useremail) {
+		return registrationRepository.findByUseremail(useremail);
 	}
 
 	public RegistrationEntity updateUser(int userID, RegistrationEntity userEntity) {
@@ -50,5 +55,10 @@ public class RegistrationService {
 				.orElseThrow(() -> new RuntimeException("No Data Found..!"));
 		registrationRepository.deleteById(userID);
 		return "Deleted Sucessfully ..!";
+	}
+	
+	/*--------------------for login method--------------------*/
+	public RegistrationEntity fetchByUsernameAndUserpassword(String username,String userpassword) {
+		return registrationRepository.findByUseremailAndUserpassword(username, userpassword);
 	}
 }

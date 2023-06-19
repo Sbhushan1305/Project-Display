@@ -14,9 +14,6 @@ import java.util.List;
 public interface RegistrationRepository extends JpaRepository<RegistrationEntity, Integer>{
 
 	public Optional<RegistrationEntity> findByusername(String username);
-
-	public Optional<RegistrationEntity> findByUseremailAndUserpassword(String username, String userpassword);
-
-	public RegistrationEntity findByuseremail(String useremail);
-
+	public RegistrationEntity findByUseremail(String useremail);
+	public RegistrationEntity findByUseremailAndUserpassword(String useremail, String userpassword);
 }
