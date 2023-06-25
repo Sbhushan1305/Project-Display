@@ -1,9 +1,12 @@
 package com.medicare.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,6 +19,8 @@ public class RegistrationEntity {
 	private String useremail;
 	private String userpassword;
 	private String role;
+	@OneToOne (mappedBy = "registrationEntity", fetch = FetchType.LAZY , cascade = CascadeType.ALL )
+	private ProductEntity productEntity;
 	
 	public RegistrationEntity() {
 		super();

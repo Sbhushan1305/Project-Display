@@ -22,7 +22,7 @@ import com.medicare.repo.RegistrationRepository;
 import com.medicare.service.RegistrationService;
 
 @RestController
-@RequestMapping(path = "/v1/medicare/registration")
+@RequestMapping(path = "/v1/medicare/")
 @CrossOrigin(origins = "http://localhost:4200")
 public class RegistrationController {
 	@Autowired
@@ -86,7 +86,7 @@ public class RegistrationController {
 			entityObj = registrationService.fetchByUsernameAndUserpassword(tempEmail, tempPassword);
 		}
 		if (entityObj == null) {
-			throw new Exception("Bad Credentials...!");
+			throw new Exception("Bad Credentials ! Please Enter Valid Email And Password");
 		}
 		return entityObj;
 	}
