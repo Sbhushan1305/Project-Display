@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -13,6 +13,11 @@ import { AddproductComponent } from './pages/addproduct/addproduct.component';
 import { UserlistComponent } from './pages/userlist/userlist.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { ReceiptComponent } from './pages/receipt/receipt.component';
+import { ProductControlComponent } from './pages/product-control/product-control.component';
+import { FormsModule } from '@angular/forms';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,13 +31,20 @@ import { ReceiptComponent } from './pages/receipt/receipt.component';
     AddproductComponent,
     UserlistComponent,
     PaymentComponent,
-    ReceiptComponent
+    ReceiptComponent,
+    ProductControlComponent
   ],
   imports: [
+    AppRoutingModule,
+    CommonModule,
+    RouterModule,
+    NgModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -7,6 +7,7 @@ import { AddproductComponent } from './pages/addproduct/addproduct.component';
 import { UserlistComponent } from './pages/userlist/userlist.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { ReceiptComponent } from './pages/receipt/receipt.component';
+import { ProductControlComponent } from './pages/product-control/product-control.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'registration', component:RegistrationComponent, pathMatch:"full"},
   {path:'home', component:HomeComponent, pathMatch:"full"},
   {path:'addproduct', component:AddproductComponent, pathMatch:"full"},
+  {path:'productcontrol', component:ProductControlComponent, pathMatch:"full"},
   {path:'userlist', component:UserlistComponent, pathMatch:"full"},
   {path:'payment', component:PaymentComponent, pathMatch:"full"},
   {path:'receipt', component:ReceiptComponent, pathMatch:"full"},
