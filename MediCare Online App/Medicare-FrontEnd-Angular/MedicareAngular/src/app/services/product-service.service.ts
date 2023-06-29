@@ -7,10 +7,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductServiceService {
-  private baseURL="http://localhost:8080/v1/medicare/productlist"
-  constructor(private httpclient:HttpClient) { }
+  private productListURL = "http://localhost:8080/v1/medicare/productlist"
+  private saveProductURL = "http://localhost:8080/v1/medicare/saveProduct"
+  constructor(private httpclient: HttpClient) { }
 
-  getProductList(): Observable<ProductClass[]>{
-    return this.httpclient.get<ProductClass[]>(`${this.baseURL}`);
+  getProductList(): Observable<ProductClass[]> {
+    return this.httpclient.get<ProductClass[]>(`${this.productListURL}`);
+  }
+
+  addProduct(productsave: ProductClass): Observable<Object> {
+    return this.httpclient.post(`${this.saveProductURL}`, productsave);
   }
 }

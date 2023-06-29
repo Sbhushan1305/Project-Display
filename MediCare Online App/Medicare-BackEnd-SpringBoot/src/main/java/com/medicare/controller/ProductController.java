@@ -50,5 +50,4 @@ public class ProductController {
 	public ResponseEntity<String> deleteProductById(@PathVariable int pid) {
 		return new ResponseEntity<String>(productService.deleteProductById(pid), HttpStatus.OK);
 	}
-
 }

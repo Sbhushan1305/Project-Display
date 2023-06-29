@@ -17,31 +17,29 @@
                 <tbody>
 
                     <tr *ngFor="let product of productlistArray">
-                        <div
-                            style="
-                            border-style: solid; border-radius: 3mm; padding: 5mm;
+                        <div style="
+                            border-style: solid; border-radius: 3mm; padding: 5mm;margin-top: 5mm;margin-bottom: 5mm;
                             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
 
-                            <td>
-                                <div>
-                                   Product Name : {{product.productName}}
-                                   <br>
-                                   Product Brand : {{product.productBrand}}
-                                </div>
-                            </td>
-                            <br>
-                            <td>
-                                <img src="{{product.productImage}}" alt="" height="300mm" width="100%">
-                            </td>
-                            <div style="word-wrap: normal;">
+                            <div style="float: left;padding: 1mm;">
+                                <td>
+                                    <img src="{{product.productImage}}" alt="" height="250mm" width="300mm">
+                                </td>
+                            </div>
+
+
+                            <div style="word-wrap: normal; margin-left: 100mm;margin-top: 10mm;">
+                                Product Name : {{product.productName}} <br>
+                                Product Brand : {{product.productBrand}} <br>
                                 Product Qty Remains : {{product.productTotalQuantity}} <br>
                                 Product Description : {{product.productDescription}} <br>
                                 Product Price/piece : {{product.productPrice}} <br>
                                 Product Offer/piece : {{product.productDiscount}}% <br>
                                 Offer Price/piece : {{product.productDiscountedPrice}} <br>
-                            </div>
-                            <br>
+
+                                <br>
                                 <a class="btn btn-primary" href="payment" role="button">Buy</a>
+                            </div>
                         </div>
                     </tr>
                 </tbody>

@@ -7,8 +7,9 @@ import { RegistrationClass } from '../classes/registration-class';
   providedIn: 'root'
 })
 export class RegistrationServiceService {
-  private baseURL="http://localhost:8080/v1/medicare/saveUser"
+  private saveUserURL="http://localhost:8080/v1/medicare/saveUser"
   private userListURL="http://localhost:8080/v1/medicare/userlist"
+  private logInUserURL="http://localhost:8080/v1/medicare/login"
   constructor(private httpclient:HttpClient) { }
 
   getUserList(): Observable<RegistrationClass[]>{
@@ -16,6 +17,10 @@ export class RegistrationServiceService {
   }
 
   addUser(registration : RegistrationClass) : Observable <Object>{
-    return this.httpclient.post(`${this.baseURL}`,registration);
+    return this.httpclient.post(`${this.saveUserURL}`,registration);
+  }
+
+  loginUser(registration : RegistrationClass) : Observable <Object>{
+    return this.httpclient.post(`${this.logInUserURL}`,registration);
   }
 }

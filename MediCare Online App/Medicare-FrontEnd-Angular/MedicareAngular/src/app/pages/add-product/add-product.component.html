@@ -21,47 +21,58 @@
         ">
 
             <div style="color: blue;">
-                <h2>Add Products</h2><br>
+                <h2>Add Products</h2>
             </div>
             <hr>
             <div>
-                <form>
+                <form (ngSubmit)="onAddProductSubmit()">
                     <!-- Name input -->
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Product Name</span>
-                        <input type="text" class="form-control" id="productName" name="productName" placeholder="Product Name"/>
+                        <input type="text" class="form-control" id="productName" name="productName"
+                            placeholder="Product Name" [(ngModel)]="productclass.productName" />
                     </div>
 
                     <!-- Brand input -->
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Product Brand</span>
-                        <input type="text" class="form-control" id="productBrand" name="productBrand" placeholder="Product Brand Name" />
+                        <input type="text" class="form-control" id="productBrand" name="productBrand"
+                            placeholder="Product Brand Name" [(ngModel)]="productclass.productBrand" />
                     </div>
 
                     <!-- Description input -->
                     <div class="input-group mb-3">
                         <span class="input-group-text">Product Description</span>
-                        <textarea class="form-control" 
-                            placeholder="Product Descritption"></textarea>
+                        <textarea class="form-control" id="productDescription" name="productDescription"
+                            placeholder="Product Descritption" [(ngModel)]="productclass.productDescription"></textarea>
                     </div>
 
                     <!-- quantity input -->
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Product Quantity</span>
-                        <input type="number" class="form-control" placeholder="Qty" />
+                        <input type="number" class="form-control" id="productTotalQuantity" name="productTotalQuantity"
+                            placeholder="Qty" [(ngModel)]="productclass.productTotalQuantity" />
+                    </div>
+
+                    <!-- Product Discount -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Product Price</span>
+                        <input type="number" class="form-control" id="productPrice" name="productPrice"
+                            placeholder="Price" [(ngModel)]="productclass.productPrice" />
                     </div>
 
                     <!-- Product Discount -->
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Product Discount</span>
-                        <input type="text" class="form-control" placeholder="Discount in %"
-                            aria-describedby="basic-addon1" />
+                        <input type="text" class="form-control" id="productDiscount" name="productDiscount"
+                            placeholder="Discount in %" [(ngModel)]="productclass.productDiscount" />
                     </div>
 
                     <!-- Image URL input -->
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon2">Image URL :</span>
-                        <textarea class="form-control" id="productImage" name="productImage" placeholder="Paste URL"></textarea>
+                        <textarea class="form-control" id="productImage" name="productImage" placeholder="Paste URL"
+                            [(ngModel)]="productclass.productImage"></textarea>
                     </div>
                     <hr>
                     <!-- Submit button -->

@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 ">
-        <div class="col-md-4" style="
+        <div class="col-md-6" style="
         margin-top: 10mm;
         border-style: double;
         border-color: darkcyan;
@@ -21,50 +21,53 @@
         ">
 
             <div style="color: blue;">
-                <h2>Product Control/Update</h2><br>
+                <h2>Product Control/Update</h2>
             </div>
             <hr>
             <div>
                 <form>
-                    <!-- Name input -->
-                    <div class="input-group mb-3">
+                     <!-- Name input -->
+                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Product Name</span>
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                            aria-describedby="basic-addon1" />
+                        <input type="text" class="form-control" id="productName" name="productName" placeholder="Product Name"/>
                     </div>
 
                     <!-- Brand input -->
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Product Brand</span>
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                            aria-describedby="basic-addon1" />
+                        <input type="text" class="form-control" id="productBrand" name="productBrand" placeholder="Product Brand Name" />
                     </div>
 
                     <!-- Description input -->
                     <div class="input-group mb-3">
                         <span class="input-group-text">Product Description</span>
-                        <textarea class="form-control" aria-label="With textarea"
+                        <textarea class="form-control" id="productDescription" name="productDescription"
                             placeholder="Product Descritption"></textarea>
                     </div>
 
                     <!-- quantity input -->
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Product Quantity</span>
-                        <input type="number" class="form-control" placeholder="Qty" aria-label="Username"
-                            aria-describedby="basic-addon1" />
+                        <input type="number" class="form-control" id="productTotalQuantity" name="productTotalQuantity" placeholder="Qty" />
+                    </div>
+
+                    <!-- Product Discount -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Product Price</span>
+                        <input type="number" class="form-control" id="productPrice" name="productPrice" placeholder="Price" />
                     </div>
 
                     <!-- Product Discount -->
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Product Discount</span>
-                        <input type="text" class="form-control" placeholder="Discount in %" aria-label="Username"
+                        <input type="text" class="form-control" id="productDiscount" name="productDiscount" placeholder="Discount in %"
                             aria-describedby="basic-addon1" />
                     </div>
 
                     <!-- Image URL input -->
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon2">Image URL :</span>
-                        <textarea class="form-control" aria-label="With textarea" placeholder="Paste URL"></textarea>
+                        <textarea class="form-control" id="productImage" name="productImage" placeholder="Paste URL"></textarea>
                     </div>
                     <hr>
                     <!-- Submit button -->
