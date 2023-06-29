@@ -50,8 +50,8 @@ public class ProductService {
 		if (productEntity.getProductDiscount()!= 0) {
 			updatingProduct.setProductDiscount(productEntity.getProductDiscount());
 		}
-		if (productEntity.getProductDiscount()!= 0) {
-			
+		if (productEntity.getProductImage()!= null) {
+			updatingProduct.setProductImage(productEntity.getProductImage());
 		}
 		return productRepository.save(updatingProduct);
 	}

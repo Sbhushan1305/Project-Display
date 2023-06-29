@@ -1,0 +1,55 @@
+<!-- navbar -->
+<app-navbar></app-navbar>
+<div style="margin-top: 25mm;margin-bottom: 15mm;">
+    <div>
+        <!-- Page Content-->
+        <div class="container px-4 px-lg-5">
+            <!-- Heading Row-->
+            <app-header></app-header>
+            <!-- Call to Action-->
+            <div class="card text-white bg-secondary my-5 py-3 text-center">
+                <div class="card-body">
+                    <p class="text-white m-0">Explore And Buy Medicare Products Here</p>
+                </div>
+            </div>
+            <!-- Content Row-->
+            <table>
+                <tbody>
+
+                    <tr *ngFor="let product of productlistArray">
+                        <div
+                            style="
+                            border-style: solid; border-radius: 3mm; padding: 5mm;
+                            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+
+                            <td>
+                                <div>
+                                   Product Name : {{product.productName}}
+                                   <br>
+                                   Product Brand : {{product.productBrand}}
+                                </div>
+                            </td>
+                            <br>
+                            <td>
+                                <img src="{{product.productImage}}" alt="" height="300mm" width="100%">
+                            </td>
+                            <div style="word-wrap: normal;">
+                                Product Qty Remains : {{product.productTotalQuantity}} <br>
+                                Product Description : {{product.productDescription}} <br>
+                                Product Price/piece : {{product.productPrice}} <br>
+                                Product Offer/piece : {{product.productDiscount}}% <br>
+                                Offer Price/piece : {{product.productDiscountedPrice}} <br>
+                            </div>
+                            <br>
+                                <a class="btn btn-primary" href="payment" role="button">Buy</a>
+                        </div>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<div style="margin-top: 25mm;margin-bottom: 15mm;">
+    <app-footer></app-footer>
+</div>

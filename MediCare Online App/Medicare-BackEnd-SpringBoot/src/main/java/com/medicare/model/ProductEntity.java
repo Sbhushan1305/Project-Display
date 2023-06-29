@@ -22,8 +22,9 @@ public class ProductEntity {
 	private int productTotalQuantity;
 	private float productPrice;
 	private int productDiscount;
+	private String productImage;
 	private float productDiscountedPrice = (productPrice * productDiscount) / 100;
-	@OneToOne(fetch = FetchType.LAZY , cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_ID")
 	private RegistrationEntity registrationEntity;
 
@@ -96,4 +97,19 @@ public class ProductEntity {
 		this.productDiscountedPrice = productDiscountedPrice;
 	}
 
+	public String getProductImage() {
+		return productImage;
+	}
+
+	public void setProductImage(String productImage) {
+		this.productImage = productImage;
+	}
+
+	public RegistrationEntity getRegistrationEntity() {
+		return registrationEntity;
+	}
+
+	public void setRegistrationEntity(RegistrationEntity registrationEntity) {
+		this.registrationEntity = registrationEntity;
+	}
 }

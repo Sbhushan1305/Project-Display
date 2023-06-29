@@ -9,5 +9,4 @@ public class MedicareBackEndSpringBootApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MedicareBackEndSpringBootApplication.class, args);
 	}
-
 }
