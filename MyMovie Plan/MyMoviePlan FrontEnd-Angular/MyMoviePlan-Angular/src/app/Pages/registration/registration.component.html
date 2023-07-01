@@ -1,0 +1,72 @@
+<div>
+    <!-- Background image -->
+    <div class="bg-image d-flex justify-content-center align-items-center" style="
+  background-image: url('https://img.freepik.com/free-photo/movie-background-collage_23-2149876003.jpg');
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+">
+        <div class="col-md-4" style="
+        border-style: double;
+        border-color: darkcyan;
+        border-radius: 10mm;
+        padding: 10mm;
+        background-color: aliceblue;
+        border-width: 3mm;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        ">
+
+            <div style="color: blue;text-align: center;">
+                <h2>Registration Form</h2><br>
+            </div>
+            <hr>
+            <div>
+                <form (ngSubmit)="onSubmit()">
+                    <!-- Name input -->
+                    <div class="form-outline mb-2">
+                        <label class="form-group">Full Name</label>
+                        <input type="text" id="username" name="username" class="form-control"
+                            placeholder="Enter Your Full Name" [(ngModel)]="registrationClass.username"/>
+                    </div>
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-2">
+                        <label class="form-group">Email address</label>
+                        <input type="email" id="useremail" name="useremail" class="form-control" 
+                        placeholder="Enter Your Email ID" [(ngModel)]="registrationClass.useremail"/>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-2">
+                        <label class="form-group">Password</label>
+                        <input type="password" id="userpassword" name="userpassword" class="form-control"
+                            placeholder="Enter Your Password" [(ngModel)]="registrationClass.userpassword" />
+                    </div>
+
+                    <!-- role button -->
+                    <div class="form-outline mb-3">
+                        <label class="form-group">Choose Your Role:</label><br>
+                        <select id="role" name="role" [(ngModel)]="registrationClass.role">
+                            <option value="user">User</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <br>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="reset" class="btn btn-primary btn-block">Reset All</button>
+                    <hr>
+                    <!-- Register buttons -->
+                    <div class="text-center">
+                        <p>Alredy member? <a href="login" style="color: red;">Login</a></p>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!-- Background image -->
+</div>
