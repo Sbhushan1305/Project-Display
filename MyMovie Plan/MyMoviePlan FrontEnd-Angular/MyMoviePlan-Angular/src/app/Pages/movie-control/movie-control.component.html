@@ -3,13 +3,12 @@
     <!-- Background image -->
     <div class="bg-image d-flex justify-content-center align-items-center" style="
   background-image: url('https://img.freepik.com/free-vector/film-strip-background-with-clapper-board_1017-33456.jpg');
-  height: 100vh;
   width: 100%;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
 ">
         <div class="col-md-6" style="
-        margin-top: 10mm;
+        margin-top: 20mm;
         border-style: double;
         border-color: darkcyan;
         border-radius: 10mm;
@@ -21,57 +20,74 @@
         ">
 
             <div style="color: blue;">
-                <h2>Product Control/Update</h2>
+                <h2>Update/Control Movies</h2>
             </div>
             <hr>
             <div>
-                <form>
-                     <!-- Name input -->
-                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Product Name</span>
-                        <input type="text" class="form-control" id="productName" name="productName" placeholder="Product Name"/>
+                <form (ngSubmit)="onsubmitAddMovieSubmit()">
+                    <!-- Name input -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Movie Name</span>
+                        <input type="text" class="form-control" id="movieName" name="movieName"
+                            placeholder="Movie Name" [(ngModel)]="movieclass.movieName" />
                     </div>
 
                     <!-- Brand input -->
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Product Brand</span>
-                        <input type="text" class="form-control" id="productBrand" name="productBrand" placeholder="Product Brand Name" />
+                        <span class="input-group-text" id="basic-addon1">Movie Brand</span>
+                        <input type="text" class="form-control" id="movieBrand" name="movieBrand"
+                            placeholder="Movie Brand Name" [(ngModel)]="movieclass.movieBrand" />
                     </div>
 
                     <!-- Description input -->
                     <div class="input-group mb-3">
-                        <span class="input-group-text">Product Description</span>
-                        <textarea class="form-control" id="productDescription" name="productDescription"
-                            placeholder="Product Descritption"></textarea>
+                        <span class="input-group-text">Movie Description</span>
+                        <textarea class="form-control" id="movieDescription" name="movieDescription"
+                            placeholder="Movie Descritption" [(ngModel)]="movieclass.movieDescription"></textarea>
                     </div>
 
                     <!-- quantity input -->
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Product Quantity</span>
-                        <input type="number" class="form-control" id="productTotalQuantity" name="productTotalQuantity" placeholder="Qty" />
+                        <span class="input-group-text" id="basic-addon1">Movie Date</span>
+                        <input type="date" class="form-control" id="movieDay" name="movieDay"
+                            placeholder="Day" [(ngModel)]="movieclass.movieDay" />
+                    </div>
+                    <!-- quantity input -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Movie Timing</span>
+                        <input type="time" class="form-control" id="movieTiming" name="movieTiming"
+                            placeholder="Timing" [(ngModel)]="movieclass.movieTiming" />                            
+                    </div>
+                    <!-- quantity input -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Movie Ticket Quantity</span>
+                        <input type="number" class="form-control" id="movieTotalQuantity" name="movieTotalQuantity"
+                            placeholder="Qty" [(ngModel)]="movieclass.movieTotalQuantity" />
                     </div>
 
                     <!-- Product Discount -->
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Product Price</span>
-                        <input type="number" class="form-control" id="productPrice" name="productPrice" placeholder="Price" />
+                        <span class="input-group-text" id="basic-addon1">Movie Price</span>
+                        <input type="number" class="form-control" id="moviePrice" name="moviePrice"
+                            placeholder="Price" [(ngModel)]="movieclass.moviePrice" />
                     </div>
 
                     <!-- Product Discount -->
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Product Discount</span>
-                        <input type="text" class="form-control" id="productDiscount" name="productDiscount" placeholder="Discount in %"
-                            aria-describedby="basic-addon1" />
+                        <span class="input-group-text" id="basic-addon1">Movie Discount</span>
+                        <input type="text" class="form-control" id="movieDiscount" name="movieDiscount"
+                            placeholder="Discount in %" [(ngModel)]="movieclass.movieDiscount" />
                     </div>
 
                     <!-- Image URL input -->
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon2">Image URL :</span>
-                        <textarea class="form-control" id="productImage" name="productImage" placeholder="Paste URL"></textarea>
+                        <textarea class="form-control" id="movieImage" name="movieImage" placeholder="Paste URL"
+                            [(ngModel)]="movieclass.movieImage"></textarea>
                     </div>
                     <hr>
                     <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-block">Update Product</button>
+                    <button type="submit" class="btn btn-primary btn-block">Add Movie</button>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <button type="reset" class="btn btn-primary btn-block">Reset All</button>
                 </form>
