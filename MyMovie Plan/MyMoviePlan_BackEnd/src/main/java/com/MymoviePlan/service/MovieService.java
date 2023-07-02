@@ -39,6 +39,12 @@ public class MovieService {
 		if (mymovieEntity.getMovieDescription() != null) {
 			updatingMovie.setMovieDescription(mymovieEntity.getMovieDescription());
 		}
+		if (mymovieEntity.getMovieDay() != null) {
+			updatingMovie.setMovieDay(mymovieEntity.getMovieDay());
+		}
+		if (mymovieEntity.getMovieTiming() != null) {
+			updatingMovie.setMovieTiming(mymovieEntity.getMovieTiming());
+		}
 		if (mymovieEntity.getMovieTotalQuantity() != 0) {
 			updatingMovie.setMovieTotalQuantity(mymovieEntity.getMovieTotalQuantity());
 		}

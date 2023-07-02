@@ -1,6 +1,7 @@
 package com.MymoviePlan.model;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -18,10 +19,14 @@ public class MymovieEntity {
 	private int movieid;
 	private String movieName;
 	private String movieBrand;
+	@Column(length = 500)
 	private String movieDescription;
+	private String movieDay;
+	private String movieTiming;
 	private int movieTotalQuantity;
 	private float moviePrice;
 	private int movieDiscount;
+	@Column(length = 1000)
 	private String movieImage;
 	private float movieDiscountedPrice = (moviePrice * movieDiscount) / 100;
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -67,6 +72,18 @@ public class MymovieEntity {
 	}
 	public void setMoviePrice(float moviePrice) {
 		this.moviePrice = moviePrice;
+	}
+	public String getMovieDay() {
+		return movieDay;
+	}
+	public void setMovieDay(String movieDay) {
+		this.movieDay = movieDay;
+	}
+	public String getMovieTiming() {
+		return movieTiming;
+	}
+	public void setMovieTiming(String movieTiming) {
+		this.movieTiming = movieTiming;
 	}
 	public int getMovieDiscount() {
 		return movieDiscount;

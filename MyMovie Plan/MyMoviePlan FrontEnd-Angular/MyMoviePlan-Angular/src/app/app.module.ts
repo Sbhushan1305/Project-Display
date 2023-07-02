@@ -12,9 +12,9 @@ import { LoginComponent } from './Pages/login/login.component';
 import { RegistrationComponent } from './Pages/registration/registration.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { UserlistComponent } from './Pages/userlist/userlist.component';
-import { AddMoviewComponent } from './Pages/add-moview/add-moview.component';
 import { PaymentComponent } from './Pages/payment/payment.component';
 import { MovieControlComponent } from './Pages/movie-control/movie-control.component';
+import { AddMovieComponent } from './Pages/add-movie/add-movie.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +26,9 @@ import { MovieControlComponent } from './Pages/movie-control/movie-control.compo
     RegistrationComponent,
     HomeComponent,
     UserlistComponent,
-    AddMoviewComponent,
     PaymentComponent,
-    MovieControlComponent
+    MovieControlComponent,
+    AddMovieComponent
   ],
   imports: [
     BrowserModule,

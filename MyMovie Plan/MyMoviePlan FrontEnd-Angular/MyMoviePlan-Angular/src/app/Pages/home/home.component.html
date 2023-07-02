@@ -1,33 +1,50 @@
- <div>
-<app-navbar></app-navbar>
- </div>
- <div>
+<div>
+    <app-navbar></app-navbar>
+</div>
+<div>
     <app-header></app-header>
- </div>
- <div>
+</div>
+<div>
     <!-- Call to Action-->
     <div class="card text-white bg-secondary my-5 py-3 text-center" style="margin: 5mm;">
-        <div class="card-body"><p class="text-white m-0">
+        <div class="card-body">
+            <p class="text-white m-0">
                 Explore Movies ! Enjoy Day ! Enjoy Life</p>
         </div>
     </div>
     <!-- Content section 1-->
- <section id="scroll">
-    <div class="container px-5">
-        <div class="row gx-5 align-items-center">
-            <div class="col-lg-6 order-lg-2">
-                <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/01.jpg" alt="..." /></div>
-            </div>
-            <div class="col-lg-6 order-lg-1">
-                <div class="p-5">
-                    <h2 class="display-4">For those about to rock...</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+    <tr *ngFor="let movie of movieListArray">
+        <section id="scroll">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="p-8"><img class="img-fluid rounded-circle" src="{{movie.movieImage}}" alt="movie image" 
+                            height="600mm" width="600mm"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="p-5">
+                            <h2 class="display-4" style="font-weight: normal;text-transform: uppercase;">{{movie.movieName}}</h2>
+                            <hr>
+                            <p style="font-weight: bold;">Movie Brand : {{movie.movieBrand}}</p>
+                            <p style="font-style: italic;">{{movie.movieDescription}}</p>
+                            <p>Show Day : {{movie.movieDay}}</p>
+                            <p>Movie Timing : {{movie.movieTiming}}</p>
+                            <p>Remaining Ticket : {{movie.movieTotalQuantity}}</p>
+                            <p>Ticket Price/Qty : {{movie.moviePrice}}</p>
+                            <p>Price Off : {{movie.movieDiscount}}%</p>
+                            <p>Offer Price : {{movie.movieDiscountedPrice}}</p>                       
+                            <hr>
+                            <a class="btn btn-primary" href="payment" role="button">Book Show</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
- </div>
+        </section>
+    </tr>
+</div>
+
 <div>
     <app-footer></app-footer>
 </div>
