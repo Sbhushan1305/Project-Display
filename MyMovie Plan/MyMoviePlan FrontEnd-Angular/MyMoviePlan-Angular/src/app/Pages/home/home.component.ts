@@ -14,7 +14,7 @@ export class HomeComponent {
     this.getMovieList();
   }
   private getMovieList() {
-    this.movieService.getProductList().subscribe(data => {
+    this.movieService.getMovieList().subscribe(data => {
       this.movieListArray = data
     })
   }

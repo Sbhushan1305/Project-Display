@@ -1,0 +1,63 @@
+<!-- Navbar -->
+<app-navbar></app-navbar>
+<div>
+    <!-- Background image -->
+    <div class="bg-image d-flex justify-content-center" style="
+  background-image: url('https://img.freepik.com/free-vector/film-strip-background-with-clapper-board_1017-33456.jpg');
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+">
+        <div class="col-md-12" style="
+margin-top: 25mm;
+        border-style: double;
+        border-color: darkcyan;
+        border-radius: 10mm;
+        padding: 10mm;
+        background-color: aliceblue;
+        border-width: 3mm;
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        ">
+            <div>
+                <h2>Movie List And Control <a class="btn btn-primary" href="movielist" role="button">Refresh
+                        Page</a></h2>
+                <hr>
+                <table class="table table-striped" style="text-align: left;">
+                    <thead style="background-color:blue; font-size: 5mm;color: azure;">
+                        <th style="text-align: left;">Movie ID</th>
+                        <th style="text-align: left;">Movie Name</th>
+                        <th style="text-align: left;">Movie Brand</th>
+                        <th style="text-align: left;">Date</th>
+                        <th style="text-align: left;">Timing</th>
+                        <th style="text-align: left;">Qty</th>
+                        <th style="text-align: left;">Price</th>
+                        <th style="text-align: left;">Discount</th>
+                        <th style="text-align: left;">Pic</th>
+                        <th style="text-align: left;">Discounted Price</th>
+                        <th style="text-align: left;">Update</th>
+                        <th style="text-align: left;">Delete</th>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let movie of movieListArray">
+                            <td>{{movie.movieid}}</td>
+                            <td>{{movie.movieName}}</td>
+                            <td>{{movie.movieBrand}}</td>
+                            <td>{{movie.movieDay}}</td>
+                            <td>{{movie.movieTiming}}</td>
+                            <td>{{movie.movieTotalQuantity}}</td>
+                            <td>{{movie.moviePrice}}</td>
+                            <td>{{movie.movieDiscount}}</td>
+                            <td><img src="{{movie.movieImage}}" alt="" height="50mm" width="100%"></td>
+                            <td>{{movie.movieDiscountedPrice}}</td>
+                            <td><button type="button" (click)="updateMovie(movie.movieid)" class="btn btn-success">Update</button></td>
+                            <td><button type="button" (click)="deleteMovieDetail(movie.movieid)" class="btn btn-danger">Delete</button></td>                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Background image -->
+    </div>

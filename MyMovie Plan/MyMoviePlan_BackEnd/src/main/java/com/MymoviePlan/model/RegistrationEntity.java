@@ -19,14 +19,14 @@ public class RegistrationEntity {
 	private String useremail;
 	private String userpassword;
 	private String role;
-	@OneToOne (mappedBy = "registrationEntity", fetch = FetchType.LAZY , cascade = CascadeType.ALL )
+	@OneToOne(mappedBy = "registrationEntity", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private MymovieEntity mymovieEntity;
-	
+
 	public RegistrationEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public RegistrationEntity(String useremail, String userpassword) {
 		super();
 		this.useremail = useremail;
@@ -91,5 +91,5 @@ public class RegistrationEntity {
 	public void setMymovieEntity(MymovieEntity mymovieEntity) {
 		this.mymovieEntity = mymovieEntity;
 	}
-
+	
 }

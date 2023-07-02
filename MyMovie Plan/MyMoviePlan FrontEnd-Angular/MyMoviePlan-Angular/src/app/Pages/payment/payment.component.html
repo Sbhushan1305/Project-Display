@@ -24,15 +24,13 @@
             <hr>
             <div>
                 <form>
-                    <tr *ngFor="let movie of movieListArray">
                     <!-- Name input -->
-                    <h4 style="text-align: left;">Your Total Amount is : {{movie.moviePrice}}</h4>
+                    <!-- <h4 style="text-align: left;">Your Total Amount is : </h4> -->
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Pay Here</span>
                         <input type="text" class="form-control" placeholder="Enter Amount" aria-label="Username"
                             aria-describedby="basic-addon1" />
                     </div>
-                
                     <hr>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <button type="submit" class="btn btn-primary btn-block">Pay</button>
@@ -41,10 +39,9 @@
                     <br>
 
                     <div style="padding-top: 5mm;">
-                        <!-- <img src="https://www.foundationhealth.org/.api2/binaries/ewehpQHXvf/thumbnails/pharmacy.JPG" alt="" height="280mm" width="100%"> -->
-                        <img src="{{movie.movieImage}}" alt="" height="280mm" width="100%">
+                        <img src="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/05/next-movie-apps.jpg"
+                            alt="" height="280mm" width="100%">
                     </div>
-                </tr>
                 </form>
 
             </div>

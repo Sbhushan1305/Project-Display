@@ -15,6 +15,7 @@ import { UserlistComponent } from './Pages/userlist/userlist.component';
 import { PaymentComponent } from './Pages/payment/payment.component';
 import { MovieControlComponent } from './Pages/movie-control/movie-control.component';
 import { AddMovieComponent } from './Pages/add-movie/add-movie.component';
+import { MovieListComponent } from './Pages/movie-list/movie-list.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AddMovieComponent } from './Pages/add-movie/add-movie.component';
     UserlistComponent,
     PaymentComponent,
     MovieControlComponent,
-    AddMovieComponent
+    AddMovieComponent,
+    MovieListComponent
   ],
   imports: [
     BrowserModule,

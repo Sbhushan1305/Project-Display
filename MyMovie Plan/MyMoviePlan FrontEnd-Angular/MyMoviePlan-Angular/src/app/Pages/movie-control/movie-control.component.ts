@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MovieClass } from 'src/app/Classes/movie-class';
 import { MoviewServiceService } from 'src/app/Services/moview-service.service';
 
@@ -8,28 +8,23 @@ import { MoviewServiceService } from 'src/app/Services/moview-service.service';
   templateUrl: './movie-control.component.html',
   styleUrls: ['./movie-control.component.css']
 })
-export class MovieControlComponent {
-  movieclass :MovieClass=new MovieClass();
-  constructor(private movieservice: MoviewServiceService, private router: Router) { 
-    
-  }
+export class MovieControlComponent implements OnInit {
+  
+  movieid !: number;
+  movieclass: MovieClass = new MovieClass();
+ constructor(private movieService: MoviewServiceService, private activateRoute: ActivatedRoute,private router:Router){}; 
   ngOnInit(): void {
-    
-  }
-  saveMovie() {
-    this.movieservice.addMovie(this.movieclass).subscribe(data => {
-      console.log(data);
-      alert("Movie Save Successfully")
-      this.goToHomePage();
-    },
-      error => {console.log(error),alert("OOPS ..Movie Failed to save !")}
-    );
-  }
-  onsubmitAddMovieSubmit(){
-    console.log(this.movieclass);
-    this.saveMovie();
-  }
+    this.movieid=this.activateRoute.snapshot.params['movieid']
+    this.movieService.getMovieByID(this.movieid).subscribe(data=>{
+      this.movieclass= data;
+    },error=>console.log(error));
+  } 
 
+  onsubmitupdateMovie(){
+    this.movieService.updateMovieDeatil(this.movieid, this.movieclass).subscribe(data =>{
+this.goToHomePage();
+    },error=>console.log(error));
+  }
   goToHomePage() {
     this.router.navigate(['/home']);
   }

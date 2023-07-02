@@ -7,6 +7,7 @@ import { UserlistComponent } from './Pages/userlist/userlist.component';
 import { PaymentComponent } from './Pages/payment/payment.component';
 import { MovieControlComponent } from './Pages/movie-control/movie-control.component';
 import { AddMovieComponent } from './Pages/add-movie/add-movie.component';
+import { MovieListComponent } from './Pages/movie-list/movie-list.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'login',pathMatch:"full"},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:'home',component:HomeComponent,pathMatch:"full"},
   {path:'addmovie',component:AddMovieComponent,pathMatch:"full"},
   {path:'userlist',component:UserlistComponent,pathMatch:"full"},
-  {path:'controlmovie',component:MovieControlComponent,pathMatch:"full"},
+  {path:'movielist',component:MovieListComponent,pathMatch:"full"},
+  {path:'controlmovie/:movieid',component:MovieControlComponent,pathMatch:"full"},
   {path:'payment',component:PaymentComponent,pathMatch:"full"}
 ];
 
